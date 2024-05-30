@@ -144,7 +144,7 @@ cin >> 变量;
   * 比较运算符:
     * 字符串比较
     * ```c++
-        //c语言风格
+        //c语言风格 
         // char str[]; char *str; 直接比较时为内存地址比较
         //如果比较内容 则需要strcmp()函数 
         #include "cstring" //C语言字符串库
@@ -153,6 +153,47 @@ cin >> 变量;
         //只要有一个在比较中时string类型，就会自动转化为C++风格
       
       ```
-  * 逻辑运算符
-  * 位运算符
+  * 逻辑运算符：` !(取反) && || == `
+  * 位运算符 << >> & | 
   * 零
+  * 三目运算符
+  ```c++
+    //产生bool类型结果的表达式 ? 值1 : 值2 ;
+    //结果为true 则为值1 ；结果为false 则为值2；
+    int value1 = 1,value2 = 2;
+    string value = value1 > value2 ? "大于二" : "小于二";
+    cout << value << endl ;
+    //结果：小于二 
+  ```
+## 第二章节
+1. if逻辑判断
+2. AI辅助(贼拉NB) 通义灵码 iFlyCode
+   * 可以通过对话框提问问题，如：` if 的用法`
+   * 可以选中代码，解释代码含义
+   * 可以生成注释（选中右键选择）
+   * 使用手册[通义灵码](https://help.aliyun.com/document_detail/2593036.html?spm=a2c4g.2590615.0.0.3ef62eceuEIUJq)
+   * 快捷键：
+     * ALT + P      //根据注释生成行间代码
+     * Ctl Shift L  //打开/关闭智能问答窗口
+     * Tab          //接受行间代码建议
+3. 综合案例
+   * 生成随机数字
+   ```c++
+    #include "random" //随机数库
+   //获取随机数两个范围内的
+    int get_random_number(int min, int max) {
+    // 创建一个随机设备对象，用于初始化随机数生成器
+    random_device rd;
+    // 使用随机设备初始化Mersenne Twister引擎
+    mt19937 gen(rd());
+    // 创建一个均匀分布，范围从min到max
+    uniform_int_distribution<int> dis(min, max);
+    // 使用生成器和分布生成一个随机整数
+    int random_number = dis(gen);
+    // 输出生成的随机数到控制台
+    std::cout << random_number << std::endl;
+    // 返回生成的随机数
+    return random_number;
+    }
+   ```
+   * 

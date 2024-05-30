@@ -3,4 +3,4 @@ project(Clion)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Clion main.cpp)
+add_executable(Clion 猜数字三次机会.cpp)
