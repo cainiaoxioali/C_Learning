@@ -133,7 +133,8 @@
 ```c++
 数据类型 变量;
 cin >> 变量;
-//回车表示一个输入完成
+cin >> 变量1 >> 变量2; //输入多个变量 以空格分割
+//回车表示一个输入完成 
 ```
 * 中文乱码解决
   * ctrl + shift + / 选择注册表 然后取消勾选run.processes.with.pty
@@ -176,9 +177,8 @@ cin >> 变量;
      * ALT + P      //根据注释生成行间代码
      * Ctl Shift L  //打开/关闭智能问答窗口
      * Tab          //接受行间代码建议
-3. 综合案例
-   * 生成随机数字
-   ```c++
+   * 综合练习
+ ```c++
     #include "random" //随机数库
    //获取随机数两个范围内的
     int get_random_number(int min, int max) {
@@ -195,5 +195,100 @@ cin >> 变量;
     // 返回生成的随机数
     return random_number;
     }
+   int main() {
+    // 初始化变量
+    int in_num;              //输入数字
+    int num;                 //生成随机数
+    string colour,shape;     //随机颜色，形状
+
+    // 生成一个1~10之间的随机整数
+    num = get_random_number(1, 10);
+    // 随机选择颜色，红色或黑色
+    colour = get_random_number(0,1)?"红色":"黑色";
+
+    // 根据颜色选择形状，红色对应红桃或方块，黑色对应黑桃或梅花
+    if(colour == "红色"){
+        shape = get_random_number(0,1) ? "红桃" : "方块";
+    } else shape = get_random_number(0,1) ? "黑桃" : "梅花";
+
+    // 打印出生成的数字、颜色和形状
+    cout << "数字：" << num << ";颜色：" << colour << ";形状：" << shape << endl;
+    cin >> in_num;
+
+    // 用户猜数字，如果猜对，则继续猜花色
+    if(num == in_num) {
+        cout << "猜对了。请猜花色，红色或是黑色" << endl;
+        //输入颜色
+        string in_colour;
+        cin >> in_colour;
+        // 用户猜颜色，如果猜对，则继续猜形状
+        if (in_colour == colour){
+            if(colour == "红色"){
+                cout << "猜对了。请猜形状，红桃或是是方块" << endl;
+            } else{
+                cout << "猜对了。请猜形状，是黑桃或是梅花" << endl;
+            }
+            //输入形状
+            string in_shape;
+            cin >> in_shape;
+            // 用户猜形状，如果猜对，则结束游戏，否则游戏结束
+            if(in_shape == shape){
+                cout << "猜对了" << endl;
+            }else cout << "猜错了游戏结束" << endl;
+        }else cout << "猜错了游戏结束" << endl;
+    }else {
+        cout << "猜错了游戏结束" << endl;
+    }
+    // 程序正常结束，返回0
+    return 0;
+
+    }
+
+```
+3. switch 语句
+   * ```c++
+     switch(expression){
+     case expression1: coude; break;
+     case expression2: coude; break;
+     }
+     //expression 只能是常量表达式，应当赋予一个常量值
+     //类型应为整形（int、short、char）和枚举类型。
+     //break跳出switch；不写break将执行下一个case语句；
    ```
-   * 
+4. 枚举类型
+    本质是一个被命名的整数型常数合集
+    * 提高代码可读性、可维护性和键入性
+    * 可以将一些数字或字符串符号化，以此增强程序的可读性和可维护性
+    ```c++
+    enum 枚举名{
+        枚举元素1，//枚举元素1的值为0
+        枚举元素2，
+        ...
+        枚举元素n
+    };
+   //枚举类型默认从0开始，也可以自定义,值按顺序递增;也可以单独给每一个元素赋值
+   //定义枚举类型变量：
+   枚举名 变量名 = 枚举元素;
+    ```
+
+5.  while()循环
+    ```c++
+    while(条件表达式){
+        code;
+    }
+    ```
+6. 概率表示
+```c++
+    #include "random" //随机数库
+    int get_random_number(int min, int max) ;
+    
+    bool = succeed_get;
+    int num = get_random_number(1,20);
+    if(num == 1)
+    {
+        cout << "5%的概率为1" << endl;
+        succeed_get = true;
+    }else{
+        succeed_get = false;
+    }
+```
