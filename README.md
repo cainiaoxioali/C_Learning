@@ -1,10 +1,11 @@
 # 开始学习C++
 2024/5/29
-## 使用Clion显示中文
+## Clion的使用
 
  * 显示中文设置
   1. #include `"windows.h"` 并在 main中加入 `SetConsoleOutputCP(CP_UTF8)`;
   2. 在main中加入 `system("chcp 65001")`;
+ * 文件不能以数字开头否则会找不到exe文件
 ## cout 打印输出
 1. //两个<<之间数组内容 ，可以任意拼接，endl表示换行:
 
