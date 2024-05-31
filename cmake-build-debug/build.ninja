@@ -49,8 +49,8 @@ cmake_ninja_workdir = E$:/document/c++/Clion/cmake-build-debug/
 
 build cmake_object_order_depends_target_Clion: phony || CMakeFiles/Clion.dir
 
-build CMakeFiles/Clion.dir/猜数字三次机会.cpp.obj: CXX_COMPILER__Clion_unscanned_Debug E$:/document/c++/Clion/猜数字三次机会.cpp || cmake_object_order_depends_target_Clion
-  DEP_FILE = CMakeFiles\Clion.dir\猜数字三次机会.cpp.obj.d
+build CMakeFiles/Clion.dir/1.猜数字三次机会.cpp.obj: CXX_COMPILER__Clion_unscanned_Debug E$:/document/c++/Clion/1.猜数字三次机会.cpp || cmake_object_order_depends_target_Clion
+  DEP_FILE = CMakeFiles\Clion.dir\1.猜数字三次机会.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Clion.dir
   OBJECT_FILE_DIR = CMakeFiles\Clion.dir
@@ -63,7 +63,7 @@ build CMakeFiles/Clion.dir/猜数字三次机会.cpp.obj: CXX_COMPILER__Clion_un
 #############################################
 # Link the executable Clion.exe
 
-build Clion.exe: CXX_EXECUTABLE_LINKER__Clion_Debug CMakeFiles/Clion.dir/猜数字三次机会.cpp.obj
+build Clion.exe: CXX_EXECUTABLE_LINKER__Clion_Debug CMakeFiles/Clion.dir/1.猜数字三次机会.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Clion.dir
